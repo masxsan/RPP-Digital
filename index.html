@@ -9,24 +9,48 @@
     * {margin: 0; padding: 0; box-sizing: border-box;}
     body {font-family: 'Poppins', sans-serif; line-height: 1.8; color: #333; background: #f0f2f5; padding: 40px;}
     .container {max-width: 1000px; margin: 0 auto; background: white; border-radius: 15px; box-shadow: 0 6px 25px rgba(0,0,0,0.1); overflow: hidden;}
-    header {background: linear-gradient(135deg, #1e88e5, #0d47a1); color: white; padding: 40px; text-align: center; position: relative;}
-    header img.logo {position: absolute; top: 20px; left: 20px; width: 80px; height: 80px; border-radius: 50%; background: white; padding: 5px;}
-    h1 {font-size: 32px; margin-bottom: 12px;}
-    .subtitle {font-size: 20px; font-weight: 300;}
+
+    header {
+      background: linear-gradient(135deg, #1e88e5, #0d47a1);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    header h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    header h2 {
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    header .subtitle {
+      font-size: 18px;
+      font-weight: 300;
+    }
+
     nav {background: #1565c0; padding: 15px; text-align: center;}
     nav a {color: white; margin: 0 20px; text-decoration: none; font-weight: 500; font-size: 16px;}
     nav a:hover {text-decoration: underline;}
-    section {padding: 30px 40px; border-bottom: 1px solid #eee;}
+    section {padding: 30px 40px; border-bottom: 1px solid #eee; line-height: 1.2;}
     section h2 {margin-bottom: 15px; color: #0d47a1;}
     .btn {display: inline-block; padding: 12px 25px; background: #1565c0; color: white; border-radius: 8px; font-weight: 500; text-decoration: none; transition: 0.3s; cursor: pointer;}
     .btn:hover {background: #0d47a1;}
-    textarea {width: 100%; min-height: 90px; padding: 12px; border: 1px solid #ccc; border-radius: 8px; background: #fafafa; resize: vertical; margin: 10px 0 20px 0; font-size: 14px;}
+    textarea {width: 100%; min-height: 90px; padding: 12px; border: 1px solid #ccc; border-radius: 8px; background: #fafafa; resize: vertical; margin: 10px 0 20px 0; font-size: 14px; line-height: 1.2;}
     .footer {text-align: center; padding: 25px; background: #1e88e5; color: white; margin-top: 30px;}
     h3 {margin-top: 20px; color: #1565c0;}
-    table {width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 14px;}
+    table {width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 14px; line-height: 1.5;}
     table, th, td {border: 1px solid #999;}
     th {background: #e3f2fd;}
-    th, td {padding: 10px; text-align: center;}
+    th, td {padding: 12px; text-align: left; vertical-align: top;}
+    td ul, td ol, td p {margin-left: 15px;}
+
+    /* Jarak antar section lebih rapat */
+    #cp, #tujuan, #langkah, #lkpd {padding-top: 10px;}
 
     /* Sembunyikan elemen saat print */
     @media print {
@@ -39,7 +63,6 @@
 <body>
   <div class="container">
     <header>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Logo_Sekolah.png" alt="Logo Sekolah" class="logo">
       <h1>RENCANA PELAKSANAAN PEMBELAJARAN (RPP)</h1>
       <h2>SMP NEGERI 2 PURWANTORO</h2>
       <p class="subtitle">Mata Pelajaran Informatika - Sistem Komputer</p>
@@ -66,14 +89,16 @@
     <!-- Identitas -->
     <section id="identitas">
       <h2>Identitas Sekolah & Guru</h2>
-      <p><strong>Sekolah:</strong> SMP Negeri 2 Purwantoro</p>
-      <p><strong>Guru:</strong> Muh Ichsan, S.Pd</p>
-      <p><strong>NIP Guru:</strong> 196903311998021002</p>
-      <p><strong>Kepala Sekolah:</strong> Nanang Bachtiar, S.Pd, M.Pd</p>
-      <p><strong>NIP Kepala Sekolah:</strong> 197201162005011008</p>
-      <p><strong>Kelas/Semester:</strong> VIII / Ganjil</p>
-      <p><strong>Materi Pokok:</strong> Sistem Komputer</p>
-      <p><strong>Alokasi Waktu:</strong> 90 Menit  (2 kali Pertemuan)</p>
+      <table>
+        <tr><td><strong>Sekolah</strong></td><td>SMP Negeri 2 Purwantoro</td></tr>
+        <tr><td><strong>Guru</strong></td><td>Muh Ichsan, S.Pd</td></tr>
+        <tr><td><strong>NIP Guru</strong></td><td>196903311998021002</td></tr>
+        <tr><td><strong>Kepala Sekolah</strong></td><td>Nanang Bachtiar, S.Pd, M.Pd</td></tr>
+        <tr><td><strong>NIP Kepala Sekolah</strong></td><td>197201162005011008</td></tr>
+        <tr><td><strong>Kelas/Semester</strong></td><td>VIII / Ganjil</td></tr>
+        <tr><td><strong>Materi Pokok</strong></td><td>Sistem Komputer</td></tr>
+        <tr><td><strong>Alokasi Waktu</strong></td><td>90 Menit (2 kali Pertemuan)</td></tr>
+      </table>
     </section>
 
     <!-- CP -->
@@ -85,58 +110,70 @@
     <!-- Tujuan -->
     <section id="tujuan">
       <h2>Tujuan Pembelajaran</h2>
-      <ol>
-        <li>Menjelaskan fungsi dan komponen sistem komputer.</li>
-        <li>Membuat program sederhana dengan Scratch/Python.</li>
-        <li>Menunjukkan pemahaman dasar AI.</li>
-        <li>Menghasilkan proyek mini integrasi komputer & AI.</li>
-      </ol>
+      <table>
+        <tr><td>1</td><td>Menjelaskan fungsi dan komponen sistem komputer.</td></tr>
+        <tr><td>2</td><td>Membuat program sederhana dengan Scratch/Python.</td></tr>
+        <tr><td>3</td><td>Menunjukkan pemahaman dasar AI.</td></tr>
+        <tr><td>4</td><td>Menghasilkan proyek mini integrasi komputer & AI.</td></tr>
+      </table>
     </section>
 
     <!-- Langkah -->
     <section id="langkah">
       <h2>Langkah-Langkah Pembelajaran</h2>
       <h3>Pertemuan 1: Pengenalan Sistem Komputer & Kode Program</h3>
-      <p><strong>Pendahuluan (10 menit)</strong></p>
-      <ol>
-        <li>Guru membuka pelajaran dengan salam dan doa.</li>
-        <li>Guru menyampaikan tujuan pembelajaran hari ini.</li>
-        <li>Apersepsi: guru menanyakan perangkat yang biasa digunakan siswa dan menghubungkannya dengan konsep sistem komputer.</li>
-      </ol>
-      <p><strong>Kegiatan Inti (40 menit)</strong></p>
-      <ol>
-        <li>Guru menjelaskan komponen sistem komputer (hardware, software, brainware).</li>
-        <li>Siswa mengamati gambar/skema sistem komputer, lalu berdiskusi kelompok untuk mengidentifikasi fungsinya.</li>
-        <li>Guru memperlihatkan contoh program sederhana (Hello World) menggunakan Scratch/Python.</li>
-        <li>Siswa mencoba membuat program “Hello World” secara mandiri dengan bimbingan guru.</li>
-      </ol>
-      <p><strong>Penutup (15 menit)</strong></p>
-      <ol>
-        <li>Siswa menyebutkan kembali komponen sistem komputer dan fungsinya.</li>
-        <li>Guru menyimpulkan pelajaran.</li>
-        <li>Pemberian tugas rumah: mencari contoh perangkat keras, lunak, dan brainware dalam kehidupan sehari-hari.</li>
-      </ol>
+      <table>
+        <tr><th>Kegiatan</th><th>Uraian</th></tr>
+        <tr><td><strong>Pendahuluan (10 menit)</strong></td><td>
+          <ol>
+            <li>Guru membuka pelajaran dengan salam dan doa.</li>
+            <li>Guru menyampaikan tujuan pembelajaran hari ini.</li>
+            <li>Apersepsi: guru menanyakan perangkat yang biasa digunakan siswa dan menghubungkannya dengan konsep sistem komputer.</li>
+          </ol>
+        </td></tr>
+        <tr><td><strong>Kegiatan Inti (40 menit)</strong></td><td>
+          <ol>
+            <li>Guru menjelaskan komponen sistem komputer (hardware, software, brainware).</li>
+            <li>Siswa mengamati gambar/skema sistem komputer, lalu berdiskusi kelompok untuk mengidentifikasi fungsinya.</li>
+            <li>Guru memperlihatkan contoh program sederhana (Hello World) menggunakan Scratch/Python.</li>
+            <li>Siswa mencoba membuat program “Hello World” secara mandiri dengan bimbingan guru.</li>
+          </ol>
+        </td></tr>
+        <tr><td><strong>Penutup (15 menit)</strong></td><td>
+          <ol>
+            <li>Siswa menyebutkan kembali komponen sistem komputer dan fungsinya.</li>
+            <li>Guru menyimpulkan pelajaran.</li>
+            <li>Pemberian tugas rumah: mencari contoh perangkat keras, lunak, dan brainware dalam kehidupan sehari-hari.</li>
+          </ol>
+        </td></tr>
+      </table>
 
       <h3>Pertemuan 2: Integrasi Sistem Komputer dengan AI</h3>
-      <p><strong>Pendahuluan (10 menit)</strong></p>
-      <ol>
-        <li>Guru membuka pembelajaran dengan salam.</li>
-        <li>Apersepsi: guru menunjukkan contoh aplikasi AI (Google Translate, Chatbot, Teachable Machine).</li>
-        <li>Guru menyampaikan tujuan pembelajaran.</li>
-      </ol>
-      <p><strong>Kegiatan Inti (40 menit)</strong></p>
-      <ol>
-        <li>Guru menjelaskan pengertian Artificial Intelligence (AI).</li>
-        <li>Diskusi kelompok: siswa menyebutkan manfaat AI dalam kehidupan sehari-hari.</li>
-        <li>Praktik: siswa membuat proyek sederhana dengan Teachable Machine (misalnya mengenali ekspresi wajah).</li>
-        <li>Presentasi hasil kerja kelompok.</li>
-      </ol>
-      <p><strong>Penutup (15 menit)</strong></p>
-      <ol>
-        <li>Siswa menyampaikan kesan belajar hari ini.</li>
-        <li>Guru memberikan penguatan tentang peran AI dalam sistem komputer.</li>
-        <li>Menyampaikan rencana pembelajaran berikutnya dan memberi motivasi.</li>
-      </ol>
+      <table>
+        <tr><th>Kegiatan</th><th>Uraian</th></tr>
+        <tr><td><strong>Pendahuluan (10 menit)</strong></td><td>
+          <ol>
+            <li>Guru membuka pembelajaran dengan salam.</li>
+            <li>Apersepsi: guru menunjukkan contoh aplikasi AI (Google Translate, Chatbot, Teachable Machine).</li>
+            <li>Guru menyampaikan tujuan pembelajaran.</li>
+          </ol>
+        </td></tr>
+        <tr><td><strong>Kegiatan Inti (40 menit)</strong></td><td>
+          <ol>
+            <li>Guru menjelaskan pengertian Artificial Intelligence (AI).</li>
+            <li>Diskusi kelompok: siswa menyebutkan manfaat AI dalam kehidupan sehari-hari.</li>
+            <li>Praktik: siswa membuat proyek sederhana dengan Teachable Machine (misalnya mengenali ekspresi wajah).</li>
+            <li>Presentasi hasil kerja kelompok.</li>
+          </ol>
+        </td></tr>
+        <tr><td><strong>Penutup (15 menit)</strong></td><td>
+          <ol>
+            <li>Siswa menyampaikan kesan belajar hari ini.</li>
+            <li>Guru memberikan penguatan tentang peran AI dalam sistem komputer.</li>
+            <li>Menyampaikan rencana pembelajaran berikutnya dan memberi motivasi.</li>
+          </ol>
+        </td></tr>
+      </table>
     </section>
 
     <!-- LKPD -->
@@ -242,30 +279,9 @@
     </section>
 
     <div class="footer noprint">
-      <p>© 2025 SMP Negeri 2 Purwantoro | RPP Digital</p>
+      <p>©Developer : Muh Ichsan</p> 
+      <p>2025 SMP Negeri 2 Purwantoro | RPP Digital</p>
     </div>
   </div>
 
   <script>
-    // Simpan jawaban otomatis ke localStorage
-    document.querySelectorAll("textarea").forEach(area => {
-      let key = area.getAttribute("data-key");
-      area.value = localStorage.getItem(key) || "";
-      area.addEventListener("input", () => {
-        localStorage.setItem(key, area.value);
-      });
-    });
-
-    // Tombol hapus jawaban
-    function clearAnswers() {
-      if (confirm("Yakin ingin menghapus semua jawaban?")) {
-        document.querySelectorAll("textarea").forEach(area => {
-          let key = area.getAttribute("data-key");
-          localStorage.removeItem(key);
-          area.value = "";
-        });
-      }
-    }
-  </script>
-</body>
-</html>
