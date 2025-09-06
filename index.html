@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RPP Koding - SMP Negeri 2 Purwantoro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {font-family: 'Poppins', sans-serif; line-height: 1.8; color: #333; background: #f0f2f5; padding: 40px;}
+    .container {max-width: 1000px; margin: 0 auto; background: white; border-radius: 15px; box-shadow: 0 6px 25px rgba(0,0,0,0.1); overflow: hidden;}
+    header {background: linear-gradient(135deg, #1e88e5, #0d47a1); color: white; padding: 40px; text-align: center; position: relative;}
+    header img.logo {position: absolute; top: 20px; left: 20px; width: 80px; height: 80px; border-radius: 50%; background: white; padding: 5px;}
+    h1 {font-size: 32px; margin-bottom: 12px;}
+    .subtitle {font-size: 20px; font-weight: 300;}
+    nav {background: #1565c0; padding: 15px; text-align: center;}
+    nav a {color: white; margin: 0 20px; text-decoration: none; font-weight: 500; font-size: 16px;}
+    nav a:hover {text-decoration: underline;}
+    section {padding: 30px 40px; border-bottom: 1px solid #eee;}
+    section h2 {margin-bottom: 15px; color: #0d47a1;}
+    .btn {display: inline-block; padding: 12px 25px; background: #1565c0; color: white; border-radius: 8px; font-weight: 500; text-decoration: none; transition: 0.3s; cursor: pointer;}
+    .btn:hover {background: #0d47a1;}
+    textarea {width: 100%; min-height: 90px; padding: 12px; border: 1px solid #ccc; border-radius: 8px; background: #fafafa; resize: vertical; margin: 10px 0 20px 0; font-size: 14px;}
+    .footer {text-align: center; padding: 25px; background: #1e88e5; color: white; margin-top: 30px;}
+    h3 {margin-top: 20px; color: #1565c0;}
+    table {width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 14px;}
+    table, th, td {border: 1px solid #999;}
+    th {background: #e3f2fd;}
+    th, td {padding: 10px; text-align: center;}
+
+    /* Sembunyikan elemen saat print */
+    @media print {
+      nav, .noprint, .btn, .footer {display: none !important;}
+      body {background: white; padding: 0;}
+      .container {box-shadow: none; border-radius: 0;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Logo_Sekolah.png" alt="Logo Sekolah" class="logo">
+      <h1>RENCANA PELAKSANAAN PEMBELAJARAN (RPP)</h1>
+      <p class="subtitle">Mata Pelajaran Informatika - Sistem Komputer</p>
+    </header>
+
+    <!-- Navigasi -->
+    <nav class="noprint">
+      <a href="#identitas">Identitas</a>
+      <a href="#cp">CP</a>
+      <a href="#tujuan">Tujuan</a>
+      <a href="#langkah">Langkah</a>
+      <a href="#lkpd">LKPD</a>
+      <a href="#penilaian">Penilaian</a>
+      <a href="#refleksi">Refleksi</a>
+      <a href="#referensi">Referensi</a>
+    </nav>
+
+    <!-- Tombol Download -->
+    <div class="noprint" style="padding:25px; text-align:right;">
+      <button class="btn" onclick="window.print()">📄 Download / Cetak PDF</button>
+      <button class="btn" onclick="clearAnswers()">🗑️ Hapus Jawaban</button>
+    </div>
+
+    <!-- Identitas -->
+    <section id="identitas">
+      <h2>Identitas Sekolah & Guru</h2>
+      <p><strong>Sekolah:</strong> SMP Negeri 2 Purwantoro</p>
+      <p><strong>Guru:</strong> Muh Ichsan, S.Pd</p>
+      <p><strong>NIP Guru:</strong> 196903311998021002</p>
+      <p><strong>Kepala Sekolah:</strong> Nanang Bachtiar, S.Pd, M.Pd</p>
+      <p><strong>NIP Kepala Sekolah:</strong> 1234567890</p>
+      <p><strong>Kelas/Semester:</strong> VIII / Genap</p>
+      <p><strong>Materi Pokok:</strong> Sistem Komputer</p>
+      <p><strong>Alokasi Waktu:</strong> 2 JP (2 kali Pertemuan)</p>
+    </section>
+
+    <!-- CP -->
+    <section id="cp">
+      <h2>Capaian Pembelajaran (CP)</h2>
+      <p>Peserta didik mampu memahami sistem komputer (hardware, software, brainware), membuat program sederhana, serta mengenali integrasi sistem komputer dengan teknologi AI dalam kehidupan sehari-hari.</p>
+    </section>
+
+    <!-- Tujuan -->
+    <section id="tujuan">
+      <h2>Tujuan Pembelajaran</h2>
+      <ol>
+        <li>Menjelaskan fungsi dan komponen sistem komputer.</li>
+        <li>Membuat program sederhana dengan Scratch/Python.</li>
+        <li>Menunjukkan pemahaman dasar AI.</li>
+        <li>Menghasilkan proyek mini integrasi komputer & AI.</li>
+      </ol>
+    </section>
+
+    <!-- Langkah -->
+    <section id="langkah">
+      <h2>Langkah-Langkah Pembelajaran</h2>
+      <h3>Pertemuan 1: Pengenalan Sistem Komputer & Kode Program</h3>
+      <p><strong>Pendahuluan (10 menit)</strong></p>
+      <ol>
+        <li>Guru membuka pelajaran dengan salam dan doa.</li>
+        <li>Guru menyampaikan tujuan pembelajaran hari ini.</li>
+        <li>Apersepsi: guru menanyakan perangkat yang biasa digunakan siswa dan menghubungkannya dengan konsep sistem komputer.</li>
+      </ol>
+      <p><strong>Kegiatan Inti (55 menit)</strong></p>
+      <ol>
+        <li>Guru menjelaskan komponen sistem komputer (hardware, software, brainware).</li>
+        <li>Siswa mengamati gambar/skema sistem komputer, lalu berdiskusi kelompok untuk mengidentifikasi fungsinya.</li>
+        <li>Guru memperlihatkan contoh program sederhana (Hello World) menggunakan Scratch/Python.</li>
+        <li>Siswa mencoba membuat program “Hello World” secara mandiri dengan bimbingan guru.</li>
+      </ol>
+      <p><strong>Penutup (15 menit)</strong></p>
+      <ol>
+        <li>Siswa menyebutkan kembali komponen sistem komputer dan fungsinya.</li>
+        <li>Guru menyimpulkan pelajaran.</li>
+        <li>Pemberian tugas rumah: mencari contoh perangkat keras, lunak, dan brainware dalam kehidupan sehari-hari.</li>
+      </ol>
+
+      <h3>Pertemuan 2: Integrasi Sistem Komputer dengan AI</h3>
+      <p><strong>Pendahuluan (10 menit)</strong></p>
+      <ol>
+        <li>Guru membuka pembelajaran dengan salam.</li>
+        <li>Apersepsi: guru menunjukkan contoh aplikasi AI (Google Translate, Chatbot, Teachable Machine).</li>
+        <li>Guru menyampaikan tujuan pembelajaran.</li>
+      </ol>
+      <p><strong>Kegiatan Inti (55 menit)</strong></p>
+      <ol>
+        <li>Guru menjelaskan pengertian Artificial Intelligence (AI).</li>
+        <li>Diskusi kelompok: siswa menyebutkan manfaat AI dalam kehidupan sehari-hari.</li>
+        <li>Praktik: siswa membuat proyek sederhana dengan Teachable Machine (misalnya mengenali ekspresi wajah).</li>
+        <li>Presentasi hasil kerja kelompok.</li>
+      </ol>
+      <p><strong>Penutup (15 menit)</strong></p>
+      <ol>
+        <li>Siswa menyampaikan kesan belajar hari ini.</li>
+        <li>Guru memberikan penguatan tentang peran AI dalam sistem komputer.</li>
+        <li>Menyampaikan rencana pembelajaran berikutnya dan memberi motivasi.</li>
+      </ol>
+    </section>
+
+    <!-- LKPD -->
+    <section id="lkpd">
+      <h2>Lembar Kerja Peserta Didik (LKPD)</h2>
+      <h3>Pertemuan 1</h3>
+      <p>1. Apa fungsi utama sistem komputer?</p>
+      <textarea data-key="lkpd1-1"></textarea>
+      <p>2. Sebutkan komponen sistem komputer beserta contohnya!</p>
+      <textarea data-key="lkpd1-2"></textarea>
+      <p>3. Buatlah program sederhana 'Hello World'!</p>
+      <textarea data-key="lkpd1-3"></textarea>
+      <p>4. Ubah program 'Hello World' menjadi program yang menampilkan nama Anda.</p>
+      <textarea data-key="lkpd1-4"></textarea>
+      <p>5. Buatlah program sederhana yang menampilkan penjumlahan dua angka (misalnya 5 + 3).</p>
+      <textarea data-key="lkpd1-5"></textarea>
+
+      <h3>Pertemuan 2</h3>
+      <p>1. Apa yang dimaksud dengan AI?</p>
+      <textarea data-key="lkpd2-1"></textarea>
+      <p>2. Sebutkan 3 contoh aplikasi AI!</p>
+      <textarea data-key="lkpd2-2"></textarea>
+      <p>3. Buatlah proyek sederhana dengan Teachable Machine.</p>
+      <textarea data-key="lkpd2-3"></textarea>
+      <p>4. Buatlah program sederhana yang meminta input nama, lalu menampilkan sapaan seperti: "Halo, [nama]!"</p>
+      <textarea data-key="lkpd2-4"></textarea>
+    </section>
+
+    <!-- Penilaian -->
+    <section id="penilaian">
+      <h2>Penilaian</h2>
+      <p><strong>Asesmen Pengetahuan</strong>: Tes tertulis.</p>
+      <ul>
+        <li>Sebutkan komponen utama sistem komputer!</li>
+        <li>Jelaskan perbedaan hardware, software, dan brainware.</li>
+        <li>Buatlah program sederhana untuk menampilkan teks tertentu.</li>
+        <li>Jelaskan pengertian AI dan sebutkan 3 contoh penerapannya.</li>
+      </ul>
+
+      <p><strong>Asesmen Keterampilan</strong>: Proyek program & integrasi AI.</p>
+      <ul>
+        <li>Membuat program sederhana (Hello World, operasi matematika, input/output).</li>
+        <li>Proyek kelompok menggunakan Teachable Machine.</li>
+      </ul>
+
+      <p><strong>Asesmen Sikap</strong>: Keaktifan, kerjasama, kreativitas.</p>
+
+      <h3>Rubrik Penilaian</h3>
+      <table>
+        <tr>
+          <th>Aspek</th>
+          <th>Skor 4 (Sangat Baik)</th>
+          <th>Skor 3 (Baik)</th>
+          <th>Skor 2 (Cukup)</th>
+          <th>Skor 1 (Kurang)</th>
+        </tr>
+        <tr>
+          <td>Pengetahuan</td>
+          <td>Jawaban lengkap, benar, dan runtut.</td>
+          <td>Jawaban cukup benar, ada sedikit kekurangan.</td>
+          <td>Jawaban kurang lengkap, masih banyak kekeliruan.</td>
+          <td>Jawaban tidak benar/tidak sesuai.</td>
+        </tr>
+        <tr>
+          <td>Keterampilan</td>
+          <td>Program berjalan lancar, logika benar, hasil sesuai.</td>
+          <td>Program berjalan dengan sedikit kesalahan.</td>
+          <td>Program tidak berjalan sempurna, banyak error.</td>
+          <td>Program tidak dibuat atau tidak berjalan sama sekali.</td>
+        </tr>
+        <tr>
+          <td>Sikap</td>
+          <td>Sangat aktif, bekerjasama, kreatif.</td>
+          <td>Aktif dan bekerjasama dengan baik.</td>
+          <td>Kurang aktif dan kadang tidak bekerjasama.</td>
+          <td>Tidak aktif dan tidak bekerjasama.</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Refleksi -->
+    <section id="refleksi">
+      <h2>Refleksi Guru</h2>
+      <textarea data-key="ref-g1" placeholder="Strategi pembelajaran yang efektif..."></textarea>
+      <textarea data-key="ref-g2" placeholder="Kendala siswa..."></textarea>
+      <textarea data-key="ref-g3" placeholder="Rencana perbaikan..."></textarea>
+
+      <h2>Refleksi Siswa</h2>
+      <textarea data-key="ref-s1" placeholder="Konsep yang saya pahami..."></textarea>
+      <textarea data-key="ref-s2" placeholder="Hal yang membingungkan..."></textarea>
+      <textarea data-key="ref-s3" placeholder="Cara saya belajar lebih baik..."></textarea>
+    </section>
+
+    <!-- Referensi -->
+    <section id="referensi">
+      <h2>Referensi / Sumber Bacaan</h2>
+      <ul>
+        <li>Kemdikbud RI. (2017). <em>Buku Informatika SMP Kelas VIII</em>. Jakarta: Kementerian Pendidikan dan Kebudayaan.</li>
+        <li>Suharsimi, A. (2019). <em>Pengantar Teknologi Informasi</em>. Jakarta: Rajawali Pers.</li>
+        <li>Tim Penyusun. (2021). <em>Modul Ajar Informatika SMP</em>. Jakarta: Direktorat Jenderal Pendidikan Vokasi, Kemendikbudristek.</li>
+        <li>Sumber online: <a href="https://belajar.kemdikbud.go.id" target="_blank">Rumah Belajar Kemdikbud</a></li>
+      </ul>
+    </section>
+
+    <div class="footer noprint">
+      <p>© 2025 SMP Negeri 2 Purwantoro | RPP Digital</p>
+    </div>
+  </div>
+
+  <script>
+    // Simpan jawaban otomatis ke localStorage
+    document.querySelectorAll("textarea").forEach(area => {
+      let key = area.getAttribute("data-key");
+      area.value = localStorage.getItem(key) || "";
+      area.addEventListener("input", () => {
+        localStorage.setItem(key, area.value);
+      });
+    });
+
+    // Tombol hapus jawaban
+    function clearAnswers() {
+      if (confirm("Yakin ingin menghapus semua jawaban?")) {
+        document.querySelectorAll("textarea").forEach(area => {
+          let key = area.getAttribute("data-key");
+          localStorage.removeItem(key);
+          area.value = "";
+        });
+      }
+    }
+  </script>
+</body>
+</html>
